@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rapigas La Rioja | Distribución de gas y agua a domicilio</title>
+
+<!-- SEO -->
+<meta name="description" content="Rapigas La Rioja: distribución de gas y agua a domicilio en La Rioja capital. Más de 25.000 pedidos entregados, +7 años en el rubro. Pedí por WhatsApp 3804-506011 y entregamos en el día." />
+<meta name="keywords" content="gas en La Rioja, garrafas en La Rioja, reparto de gas a domicilio en La Rioja, garrafa 10kg, garrafa 15kg, cilindro 45kg industria, bidón agua 20L, agua de mesa La Rioja, dispenser frío calor, alquiler dispenser eventos" />
+<meta name="author" content="Rapigas La Rioja" />
+<meta name="robots" content="index, follow" />
+<meta name="geo.region" content="AR-F" />
+<meta name="geo.placename" content="La Rioja" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Rapigas La Rioja | Gas y agua a domicilio" />
+<meta property="og:description" content="Más de 7 años llevando gas y agua a tu casa o comercio. Pedí por WhatsApp 3804-506011 y entregamos en el día." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:image" content="assets/logo.jpeg" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+
+<!-- Tailwind + Fuentes -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  // ============================================
+  // CONFIGURACIÓN — para cambiar cosas básicas
+  // ============================================
+  const WHATSAPP_NUMBER = "5493804506011"; // Formato internacional sin "+"
+
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        colors: {
+          rapi: {
+            red:      '#E71D24',
+            redDark:  '#B5141A',
+            redLight: '#FF3640',
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tight { letter-spacing: -0.045em; line-height: 0.92; }
+  .tight-sm { letter-spacing: -0.02em; }
+
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(231,29,36,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 90%, rgba(231,29,36,0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 100% 80% at 50% 100%, rgba(0,0,0,0.6) 0%, transparent 70%),
+      #0a0a0a;
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .speed-lines::before {
+    content: "";
+    position: absolute;
+    top: 20%; left: -10%;
+    width: 50%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(231,29,36,0.6), transparent);
+    transform: rotate(-8deg);
+    filter: blur(1px);
+  }
+  .speed-lines::after {
+    content: "";
+    position: absolute;
+    top: 70%; right: -10%;
+    width: 40%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: rotate(6deg);
+    filter: blur(1px);
+  }
+
+  .badge-30 {
+    display: inline-block;
+    background: #E71D24;
+    color: #fff;
+    padding: 0.05em 0.25em;
+    border-radius: 0.15em;
+    box-shadow: 8px 8px 0 0 rgba(0,0,0,0.6), 0 0 60px rgba(231,29,36,0.5);
+    transform: rotate(-1.5deg);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease-out both; }
+  .delay-100 { animation-delay: .08s; }
+  .delay-200 { animation-delay: .16s; }
+  .delay-300 { animation-delay: .24s; }
+  .delay-400 { animation-delay: .32s; }
+  .delay-500 { animation-delay: .4s; }
+
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(0.85); }
+  }
+  .pulse-dot { animation: pulseDot 1.4s ease-in-out infinite; }
+
+  @keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.55); }
+    70%  { box-shadow: 0 0 0 22px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+  .pulse-ring { animation: pulseRing 2s infinite; }
+
+  @keyframes drive {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(6px); }
+  }
+  .drive-anim { animation: drive 2s ease-in-out infinite; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee { animation: marquee 28s linear infinite; }
+
+  .btn-cta {
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-cta:hover { transform: translateY(-2px); }
+  .btn-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform .6s ease;
+  }
+  .btn-cta:hover::after { transform: translateX(100%); }
+
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .display { letter-spacing: -0.035em; line-height: 1.02; }
+  .body-tight { letter-spacing: -0.011em; }
+
+  .doc-img {
+    filter: grayscale(100%) contrast(1.05) brightness(0.92);
+    transition: filter .6s ease;
+  }
+  .doc-img:hover { filter: grayscale(100%) contrast(1.1) brightness(1); }
+
+  .divider {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    height: 1px;
+  }
+
+  .divider-red {
+    background: linear-gradient(90deg, #E71D24, transparent);
+    height: 2px;
+    width: 56px;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: reveal 0.9s ease-out both; }
+  .reveal-delay-1 { animation-delay: .1s; }
+  .reveal-delay-2 { animation-delay: .2s; }
+  .reveal-delay-3 { animation-delay: .3s; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #9ca3af;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: #E71D24;
+  }
+
+  blockquote::before {
+    content: "“";
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    line-height: 0.6;
+    color: #E71D24;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .photo-frame {
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+  }
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.025) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .accent-red { color: #E71D24; }
+
+  .lead-marker {
+    border-left: 2px solid #E71D24;
+    padding-left: 1.25rem;
+  }
+
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .display { letter-spacing: -0.035em; line-height: 1.02; }
+  .body-tight { letter-spacing: -0.011em; }
+  .accent-red { color: #E71D24; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #9ca3af;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: #E71D24;
+  }
+
+  .divider {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    height: 1px;
+  }
+
+  /* Card de producto */
+  .product-card {
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .product-card:hover {
+    border-color: rgba(231,29,36,0.5);
+    transform: translateY(-3px);
+  }
+  .product-card:hover .product-img {
+    transform: scale(1.04);
+  }
+  .product-img { transition: transform .5s ease; }
+
+  /* Botón rojo (CTA producto) */
+  .btn-red {
+    background: #E71D24;
+    color: #fff;
+    transition: background .2s ease;
+  }
+  .btn-red:hover { background: #B5141A; }
+
+  /* Botón verde WhatsApp (CTA principal del formulario) */
+  .btn-whats {
+    background: #25D366;
+    color: #000;
+    transition: background .2s ease, transform .2s ease;
+    box-shadow: 0 0 0 1px rgba(37,211,102,.3), 0 15px 40px -10px rgba(37,211,102,.55);
+  }
+  .btn-whats:hover { background: #1fbe5b; transform: translateY(-2px); }
+
+  /* Reveal */
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: reveal .9s ease-out both; }
+  .reveal-d1 { animation-delay: .08s; }
+  .reveal-d2 { animation-delay: .16s; }
+  .reveal-d3 { animation-delay: .24s; }
+  .reveal-d4 { animation-delay: .32s; }
+
+  /* Tag flotante en cards */
+  .tag {
+    background: #E71D24;
+    color: #fff;
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.3rem 0.55rem;
+    border-radius: 0.25rem;
+  }
+  .tag-light {
+    background: #fff;
+    color: #0a0a0a;
+  }
+
+  /* Inputs del form */
+  .field {
+    background: #161616;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .field:focus {
+    outline: none;
+    border-color: #E71D24;
+    background: #1a1a1a;
+  }
+  .field::placeholder { color: #6b7280; }
+
+  /* Checkbox custom */
+  input[type="checkbox"].rapi-check { accent-color: #E71D24; }
+
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .display { letter-spacing: -0.035em; line-height: 1.02; }
+  .body-tight { letter-spacing: -0.011em; }
+  .accent-red { color: #E71D24; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #9ca3af;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: #E71D24;
+  }
+
+  .lead-marker {
+    border-left: 2px solid #E71D24;
+    padding-left: 1.25rem;
+  }
+
+  .divider {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    height: 1px;
+  }
+
+  .btn-whats {
+    background: #25D366;
+    color: #000;
+    transition: background .2s ease, transform .2s ease;
+    box-shadow: 0 0 0 1px rgba(37,211,102,.3), 0 15px 40px -10px rgba(37,211,102,.55);
+  }
+  .btn-whats:hover { background: #1fbe5b; transform: translateY(-2px); }
+
+  /* Reveal */
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: reveal .9s ease-out both; }
+  .reveal-d1 { animation-delay: .08s; }
+  .reveal-d2 { animation-delay: .16s; }
+  .reveal-d3 { animation-delay: .24s; }
+
+  /* Testimonio comilla */
+  .quote-mark {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    line-height: 0.6;
+    color: #E71D24;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Pulso del punto verde "abierto" */
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(0.85); }
+  }
+  .pulse-dot { animation: pulseDot 1.4s ease-in-out infinite; }
+
+  /* Mapa placeholder estilo institucional */
+  .map-frame {
+    background:
+      linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    background-image:
+      linear-gradient(rgba(231,29,36,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(231,29,36,0.08) 1px, transparent 1px),
+      linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    background-size: 30px 30px, 30px 30px, 100% 100%;
+  }
+
+</style>
+</head>
+<body class="bg-[#0a0a0a] text-neutral-100">
+
+<!-- =================================================================== -->
+<!-- ============== HERO (con navbar) ================================== -->
+<!-- =================================================================== -->
+<!-- ============ HERO (rediseñado: blanco · Apple/Nike · honesto) ============ -->
+<section class="relative min-h-screen w-full overflow-hidden bg-white text-neutral-950 flex flex-col">
+
+  <!-- NAVBAR -->
+  <header class="relative z-30 px-5 md:px-10 pt-5 md:pt-7">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="assets/logo.jpeg" alt="Rapigas La Rioja"
+             class="w-11 h-11 md:w-12 md:h-12 rounded-lg object-cover ring-1 ring-neutral-200 group-hover:ring-rapi-red/40 transition" />
+        <div class="hidden sm:block leading-tight">
+          <div class="font-black text-base md:text-lg tracking-tight text-neutral-950">RAPI<span class="text-rapi-red">GAS</span></div>
+          <div class="text-[10px] uppercase tracking-[0.18em] text-neutral-500 -mt-0.5">La Rioja</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav pill -->
+      <div class="hidden md:flex items-center gap-8 bg-neutral-100 border border-neutral-200 rounded-full px-7 py-3">
+        <a href="#productos" class="text-sm font-medium text-neutral-700 hover:text-neutral-950 transition">Productos</a>
+        <a href="#agua"      class="text-sm font-medium text-neutral-700 hover:text-neutral-950 transition">Agua</a>
+        <a href="#industria" class="text-sm font-medium text-neutral-700 hover:text-neutral-950 transition">Comercios</a>
+        <a href="#contacto"  class="text-sm font-medium text-neutral-700 hover:text-neutral-950 transition">Contacto</a>
+      </div>
+
+      <!-- Status + CTA -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full bg-neutral-100 border border-neutral-200">
+          <span class="w-2 h-2 rounded-full bg-green-500 pulse-dot"></span>
+          <span class="text-xs font-medium text-neutral-700">Abierto</span>
+        </div>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 md:px-5 py-2.5 md:py-3 rounded-full bg-neutral-950 text-white hover:bg-neutral-800 font-medium text-xs md:text-sm transition">
+          Pedir ahora
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO CONTENT -->
+  <div class="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-5 md:px-10 pt-14 pb-24 md:pt-20 md:pb-32">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+
+      <!-- IZQUIERDA — copy + CTA -->
+      <div class="lg:col-span-7">
+
+        <!-- Eyebrow institucional -->
+        <div class="reveal inline-flex items-center gap-2.5 mb-8">
+          <span class="w-8 h-px bg-rapi-red"></span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-neutral-600 font-semibold">
+            Distribución de gas y agua · La Rioja
+          </span>
+        </div>
+
+        <!-- HEADLINE -->
+        <h1 class="reveal reveal-d1 display font-medium text-neutral-950 text-[2.6rem] sm:text-6xl lg:text-[5.2rem] leading-[0.98]">
+          El gas de tu casa,<br/>
+          el agua de tu día.<br/>
+          <span class="text-rapi-red">Pedinos y vamos.</span>
+        </h1>
+
+        <!-- Subhead -->
+        <p class="reveal reveal-d2 mt-8 text-lg sm:text-xl text-neutral-600 max-w-xl font-light leading-relaxed">
+          Distribución a domicilio en La Rioja capital.
+          <span class="text-neutral-950 font-normal">Entregamos en el día</span>,
+          con la cercanía de una empresa familiar y la seriedad de +7 años en el rubro.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal reveal-d3 mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+
+          <!-- CTA principal: WhatsApp verde -->
+          <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20hacer%20un%20pedido"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-[#25D366] hover:bg-[#1fbe5b] text-black font-semibold text-base transition shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+            Pedir por WhatsApp
+          </a>
+
+          <!-- CTA secundario: Ver productos -->
+          <a href="#productos"
+             class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-950 font-medium text-base transition">
+            Ver productos
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Micro-trust strip debajo -->
+        <div class="reveal reveal-d3 mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-neutral-500">
+          <span>Pago al recibir</span>
+          <span class="w-1 h-1 rounded-full bg-neutral-300"></span>
+          <span>Atención por persona</span>
+          <span class="w-1 h-1 rounded-full bg-neutral-300"></span>
+          <span>Lun a Sáb 08:30 a 23:00</span>
+        </div>
+
+      </div>
+
+      <!-- DERECHA — visual minimalista de prueba social -->
+      <div class="lg:col-span-5 reveal reveal-d2">
+
+        <!-- Card grande de stats institucional -->
+        <div class="relative bg-neutral-950 text-white rounded-3xl p-8 lg:p-10 overflow-hidden">
+
+          <!-- Logo arriba -->
+          <div class="flex items-center gap-3 mb-10">
+            <img src="assets/logo.jpeg" alt="" class="w-10 h-10 rounded-lg object-cover ring-1 ring-white/10" />
+            <div>
+              <div class="font-bold text-sm">Rapigas La Rioja</div>
+              <div class="text-[10px] uppercase tracking-[0.18em] text-neutral-500">Empresa familiar</div>
+            </div>
+          </div>
+
+          <!-- Stat principal -->
+          <div class="mb-10">
+            <div class="display font-medium text-6xl lg:text-7xl tracking-tight">+25.000</div>
+            <div class="mt-2 text-sm text-neutral-400">Pedidos entregados</div>
+          </div>
+
+          <!-- Sub-stats -->
+          <div class="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
+            <div>
+              <div class="display font-medium text-3xl">+7</div>
+              <div class="mt-1 text-xs text-neutral-500 uppercase tracking-wider">Años en La Rioja</div>
+            </div>
+            <div>
+              <div class="display font-medium text-3xl">Lun-Sáb</div>
+              <div class="mt-1 text-xs text-neutral-500 uppercase tracking-wider">08:30 a 23:00</div>
+            </div>
+          </div>
+
+          <!-- Línea decorativa roja sutil -->
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-rapi-red"></div>
+        </div>
+
+        <!-- Card flotante: testimonio chico abajo -->
+        <div class="mt-5 bg-neutral-50 border border-neutral-200 rounded-2xl p-5 flex items-start gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-rapi-red/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="currentColor"><path d="M9.17 6C7.86 6 6.8 7.06 6.8 8.37c0 .85.45 1.62 1.18 2.05.27.16.42.46.42.78v3.05c0 .42-.34.75-.75.75h-1.5c-.41 0-.75-.34-.75-.75V8.37C5.4 6.18 7.18 4.4 9.37 4.4h.43v1.6h-.63zm7 0c-1.31 0-2.37 1.06-2.37 2.37 0 .85.45 1.62 1.18 2.05.27.16.42.46.42.78v3.05c0 .42-.34.75-.75.75h-1.5c-.41 0-.75-.34-.75-.75V8.37c0-2.19 1.78-3.97 3.97-3.97h.43v1.6h-.63z"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-sm text-neutral-700 leading-snug">
+              "Empresa de confianza. Hace años que les pido y nunca me fallan."
+            </div>
+            <div class="mt-2 text-xs text-neutral-500">— Cliente Rapigas</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BARRA INFERIOR sutil con las categorías (sin marquee, sobrio estilo Apple) -->
+  <div class="relative z-10 border-t border-neutral-200 bg-white">
+    <div class="max-w-7xl mx-auto px-5 md:px-10 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:divide-x md:divide-neutral-200">
+      <div class="md:px-6">
+        <div class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Hogares</div>
+        <div class="text-sm text-neutral-950 font-medium mt-1">Garrafas y bidones</div>
+      </div>
+      <div class="md:px-6">
+        <div class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Comercios</div>
+        <div class="text-sm text-neutral-950 font-medium mt-1">Reposición programada</div>
+      </div>
+      <div class="md:px-6">
+        <div class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Industria</div>
+        <div class="text-sm text-neutral-950 font-medium mt-1">Cilindros 45kg</div>
+      </div>
+      <div class="md:px-6">
+        <div class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Eventos</div>
+        <div class="text-sm text-neutral-950 font-medium mt-1">Alquiler dispenser</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- ============== NOSOTROS (historia de Luis Caliva) ================= -->
+<!-- =================================================================== -->
+<section id="nosotros" class="relative py-24 sm:py-32 lg:py-40">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- ENCABEZADO -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20 lg:mb-28">
+
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Sobre Rapigas</div>
+        <h2 class="reveal reveal-delay-1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Nuestra<br/>
+          <span class="accent-red">historia.</span>
+        </h2>
+      </div>
+
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-delay-2 body-tight text-lg sm:text-xl text-neutral-300 leading-relaxed font-light lead-marker">
+          No somos una multinacional. Somos una familia riojana que en 2019 decidió poner el hombro
+          y empezar de cero. <span class="text-white font-normal">Detrás de cada pedido hay nombres, no códigos.</span>
+        </p>
+        <div class="reveal reveal-delay-3 mt-8 flex items-center gap-6 text-xs text-neutral-500">
+          <div>
+            <div class="text-2xl font-medium text-white">2019</div>
+            <div class="mt-1 uppercase tracking-wider">Fundación</div>
+          </div>
+          <div class="w-px h-10 bg-neutral-800"></div>
+          <div>
+            <div class="text-2xl font-medium text-white">La Rioja</div>
+            <div class="mt-1 uppercase tracking-wider">Capital · Argentina</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGEN DOCUMENTAL PRINCIPAL -->
+    <div class="reveal photo-frame aspect-[16/8] sm:aspect-[16/7] rounded-sm mb-24 lg:mb-32 doc-img">
+      <!--
+        REEMPLAZAR por foto real: la camioneta o moto de Rapigas en la calle,
+        Luis con el equipo, o una entrega en un barrio.
+        Recomendado en blanco y negro, formato 16:7.
+      -->
+      <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=2400&auto=format&fit=crop"
+           alt="Reparto de gas Rapigas en La Rioja"
+           class="w-full h-full object-cover" />
+      <div class="grain"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 bg-gradient-to-t from-black/80 to-transparent">
+        <div class="text-xs uppercase tracking-[0.2em] accent-red font-semibold">Rapigas · La Rioja</div>
+        <div class="mt-1 text-sm text-neutral-200">Reparto en barrios capitalinos</div>
+      </div>
+    </div>
+
+    <!-- NARRATIVA -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+
+      <!-- TEXTO PRINCIPAL -->
+      <div class="lg:col-span-7 space-y-12">
+
+        <!-- 01 — Origen -->
+        <div>
+          <div class="eyebrow mb-5">01 — El origen</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white mb-6">
+            Cuando todo se ponía cuesta arriba, Luis decidió empezar.
+          </h3>
+          <div class="space-y-5 body-tight text-base text-neutral-300 leading-relaxed font-light">
+            <p>
+              En 2019, <strong class="text-white font-normal">Luis Caliva</strong> atravesaba un momento difícil.
+              De esos en los que muchos eligen rendirse. Él eligió lo contrario: redoblar el esfuerzo,
+              confiar en su trabajo y empezar algo propio. Sin grandes ahorros, sin oficinas, sin promesas.
+              Solo una camioneta, un teléfono y la convicción de que en La Rioja faltaba un servicio honesto
+              de reparto de gas a domicilio.
+            </p>
+            <p>
+              Así nació <strong class="text-white font-normal">Rapigas</strong>. Con mucha fe, con muchas
+              horas, y con la idea simple de que las cosas bien hechas, tarde o temprano, dan resultado.
+            </p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 02 — Pandemia -->
+        <div>
+          <div class="eyebrow mb-5">02 — Año 2020</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white mb-6">
+            Cuando todo se detuvo, nosotros seguimos saliendo a la calle.
+          </h3>
+          <div class="space-y-5 body-tight text-base text-neutral-300 leading-relaxed font-light">
+            <p>
+              La pandemia nos encontró recién empezando. Mientras la mayoría cerraba sus puertas,
+              entendimos que muchas familias dependían de nosotros para algo esencial: cocinar
+              para sus hijos, calentar la casa, sostener el día a día. No era un servicio más.
+              Era parte de la vida cotidiana de la gente.
+            </p>
+            <p>
+              Salimos todos los días. Reforzamos los cuidados, ampliamos los horarios y aprendimos
+              a responder más rápido. <span class="text-white">Esos meses nos formaron.</span>
+              La confianza que ganamos en esa época es la que sostiene todo lo que vino después.
+            </p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 03 — Hoy -->
+        <div>
+          <div class="eyebrow mb-5">03 — Hoy</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white mb-6">
+            Más de 25.000 pedidos. La misma forma de trabajar.
+          </h3>
+          <div class="space-y-5 body-tight text-base text-neutral-300 leading-relaxed font-light">
+            <p>
+              Crecimos. Hoy llegamos a hogares, comercios e industrias en toda la ciudad de La Rioja,
+              de <strong class="text-white font-normal">lunes a sábados</strong>. Sumamos camionetas,
+              <strong class="text-white font-normal">motos para agilizar los pedidos urgentes</strong>,
+              gente y productos. Pero algo no cambió y no va a cambiar:
+            </p>
+            <p class="text-white font-normal">
+              Cuando nos escribís por WhatsApp, te contesta una persona. Cuando llega tu pedido,
+              te lo entrega alguien que sabe tu nombre. Cuando tenés un problema, hablás con quien
+              lo puede resolver. Así de simple.
+            </p>
+            <p>
+              No vendemos gas. Le damos una mano a las familias y a los emprendedores de La Rioja
+              cada vez que nos necesitan. Esa es la diferencia. Esa es Rapigas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA LATERAL -->
+      <aside class="lg:col-span-5 space-y-10 lg:pt-2">
+
+        <!-- Foto del fundador -->
+        <div class="photo-frame aspect-[4/5] rounded-sm doc-img">
+          <!--
+            REEMPLAZAR por foto vertical real de Luis Caliva
+            o del equipo trabajando. Ideal en blanco y negro.
+          -->
+          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1600&auto=format&fit=crop"
+               alt="Luis Caliva — Fundador de Rapigas"
+               class="w-full h-full object-cover" />
+          <div class="grain"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/85 to-transparent">
+            <div class="text-xs uppercase tracking-[0.2em] accent-red font-semibold">Fundador</div>
+            <div class="mt-1 text-base text-white font-medium">Luis Caliva</div>
+          </div>
+        </div>
+
+        <!-- Cita del fundador -->
+        <blockquote class="border-l-2 border-rapi-red pl-6">
+          <p class="display text-xl sm:text-2xl font-light text-white leading-snug">
+            Empecé con una camioneta y mucha fe. Hoy tenemos un equipo, pero seguimos atendiendo a cada cliente como si fuera el primero.
+          </p>
+          <footer class="mt-5 flex items-center gap-3 text-sm text-neutral-400">
+            <div class="w-10 h-px bg-rapi-red"></div>
+            <span>Luis Caliva, fundador de Rapigas</span>
+          </footer>
+        </blockquote>
+
+        <!-- Datos institucionales -->
+        <div class="border-t border-neutral-800 pt-8 grid grid-cols-2 gap-y-6 gap-x-4">
+          <div>
+            <div class="text-3xl font-medium accent-red display">+25.000</div>
+            <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Pedidos entregados</div>
+          </div>
+          <div>
+            <div class="text-3xl font-medium text-white display">+7</div>
+            <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Años de operación</div>
+          </div>
+          <div>
+            <div class="text-3xl font-medium text-white display">100%</div>
+            <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Capital riojano</div>
+          </div>
+          <div>
+            <div class="text-3xl font-medium accent-red display">Lun-Sáb</div>
+            <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Días de reparto</div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- LÍNEA DE TIEMPO -->
+    <div class="mt-24 lg:mt-32 border-t border-neutral-800 pt-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-3">
+          <div class="eyebrow mb-3">Trayectoria</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white">
+            De una camioneta<br/>
+            <span class="accent-red">a toda La Rioja.</span>
+          </h3>
+        </div>
+
+        <div class="lg:col-span-9">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+
+            <div class="border-t-2 border-rapi-red pt-5">
+              <div class="text-sm font-semibold text-white mb-1">2019</div>
+              <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                Luis Caliva funda Rapigas. Primeras entregas con una sola camioneta.
+              </p>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-5">
+              <div class="text-sm font-semibold text-white mb-1">2020</div>
+              <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                Servicio esencial durante la pandemia. Ampliación de horarios y zonas.
+              </p>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-5">
+              <div class="text-sm font-semibold text-white mb-1">2022</div>
+              <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                Apertura al sector comercial e industrial. Incorporación de cilindros 45kg.
+              </p>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-5">
+              <div class="text-sm font-semibold text-white mb-1">Hoy</div>
+              <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                Más de 25.000 pedidos. Camionetas y motos para entregas urgentes en toda la capital, de lunes a sábados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CIERRE -->
+    <div class="mt-24 lg:mt-32 max-w-3xl">
+      <div class="divider-red mb-8"></div>
+      <p class="display text-2xl sm:text-3xl lg:text-4xl font-light text-white leading-snug">
+        Cuando elegís Rapigas, no le estás comprando a una empresa cualquiera.
+        <span class="accent-red">Le estás dando trabajo a una familia riojana</span>
+        que entiende lo que necesitás, porque vive acá, como vos.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- ============== PRODUCTOS + PEDIDO + INDUSTRIA ===================== -->
+<!-- =================================================================== -->
+<!-- ============ PRODUCTOS ============ -->
+<section id="productos" class="relative py-24 sm:py-32 lg:py-40 border-t border-neutral-900">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- ENCABEZADO -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Productos</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Lo que necesitás,<br/>
+          <span class="accent-red">listo para pedir.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light">
+          Garrafas para tu casa, cilindros para tu comercio o industria, y agua para todos los días.
+          <span class="text-white">Tocá el botón del producto que necesitás</span> y te abrimos WhatsApp con el pedido cargado.
+        </p>
+      </div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+
+      <!-- 10 KG -->
+      <article class="product-card group rounded-sm border border-neutral-800 bg-neutral-950 overflow-hidden flex flex-col">
+        <!--
+          === REEMPLAZAR POR FOTO REAL ===
+          Cuando saques fotos propias, reemplazá el bloque <svg>...</svg> por:
+          <img src="assets/productos/garrafa-10kg.jpg" alt="Garrafa 10kg" class="product-img w-32 object-contain" />
+          Ideal: foto sobre fondo neutro, garrafa centrada vertical.
+        -->
+        <div class="relative aspect-square bg-gradient-to-b from-neutral-900 to-black overflow-hidden flex items-center justify-center">
+          <span class="absolute top-4 left-4 tag z-10">Más pedida</span>
+          <!-- Reflejo en el piso -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-3 bg-black/60 blur-md rounded-full"></div>
+          <svg viewBox="0 0 120 160" class="product-img w-32 relative z-10">
+            <defs>
+              <!-- Gradiente principal del cuerpo (luz desde arriba-izq) -->
+              <linearGradient id="body10" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#7a0d10"/>
+                <stop offset="20%" stop-color="#c01419"/>
+                <stop offset="50%" stop-color="#E71D24"/>
+                <stop offset="80%" stop-color="#a01015"/>
+                <stop offset="100%" stop-color="#5a0a0c"/>
+              </linearGradient>
+              <!-- Brillo vertical -->
+              <linearGradient id="shine10" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+              </linearGradient>
+              <!-- Metal de la válvula -->
+              <linearGradient id="valve10" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2a2a2a"/>
+                <stop offset="50%" stop-color="#6a6a6a"/>
+                <stop offset="100%" stop-color="#1a1a1a"/>
+              </linearGradient>
+              <linearGradient id="ring10" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#444"/>
+                <stop offset="50%" stop-color="#888"/>
+                <stop offset="100%" stop-color="#333"/>
+              </linearGradient>
+            </defs>
+            <!-- Sombra base -->
+            <ellipse cx="60" cy="148" rx="32" ry="3" fill="#000" opacity="0.5"/>
+            <!-- Anillo inferior (base) -->
+            <rect x="26" y="138" width="68" height="8" rx="2" fill="url(#ring10)"/>
+            <!-- Cuerpo principal -->
+            <path d="M 28 38 Q 28 30 36 30 L 84 30 Q 92 30 92 38 L 92 138 L 28 138 Z" fill="url(#body10)"/>
+            <!-- Brillo vertical del cuerpo -->
+            <path d="M 38 38 Q 38 32 44 32 L 50 32 L 50 138 L 38 138 Z" fill="url(#shine10)" opacity="0.7"/>
+            <!-- Etiqueta blanca con kg -->
+            <rect x="36" y="72" width="48" height="28" rx="2" fill="#fff"/>
+            <rect x="36" y="72" width="48" height="3" fill="#E71D24"/>
+            <rect x="36" y="97" width="48" height="3" fill="#E71D24"/>
+            <text x="60" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="13" fill="#0a0a0a">10 KG</text>
+            <!-- Anillo superior -->
+            <rect x="34" y="20" width="52" height="12" rx="3" fill="url(#ring10)"/>
+            <!-- Asas a los costados (manijas) -->
+            <path d="M 32 22 L 22 22 Q 18 22 18 26 L 18 30 Q 18 34 22 34 L 32 34" stroke="#3a3a3a" stroke-width="3" fill="none"/>
+            <path d="M 88 22 L 98 22 Q 102 22 102 26 L 102 30 Q 102 34 98 34 L 88 34" stroke="#3a3a3a" stroke-width="3" fill="none"/>
+            <!-- Válvula central -->
+            <rect x="52" y="6" width="16" height="18" rx="2" fill="url(#valve10)"/>
+            <!-- Manija de la válvula (volante) -->
+            <circle cx="60" cy="6" r="6" fill="#2a2a2a"/>
+            <circle cx="60" cy="6" r="4" fill="#5a5a5a"/>
+          </svg>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display font-semibold text-xl text-white">Garrafa 10kg</h3>
+          <p class="body-tight text-sm text-neutral-400 mt-2 font-light flex-1">
+            La más pedida. Ideal para hogares pequeños, departamentos y consumos moderados.
+          </p>
+          <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir%20una%20Garrafa%20de%2010kg.%20Mi%20direcci%C3%B3n%20es%3A%20"
+             target="_blank" rel="noopener"
+             class="btn-red mt-6 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-sm font-bold text-sm">
+            Pedir 10kg →
+          </a>
+        </div>
+      </article>
+
+      <!-- 15 KG -->
+      <article class="product-card group rounded-sm border border-neutral-800 bg-neutral-950 overflow-hidden flex flex-col">
+        <!--
+          === REEMPLAZAR POR FOTO REAL ===
+          <img src="assets/productos/garrafa-15kg.jpg" alt="Garrafa 15kg" class="product-img w-36 object-contain" />
+        -->
+        <div class="relative aspect-square bg-gradient-to-b from-neutral-900 to-black overflow-hidden flex items-center justify-center">
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-36 h-3 bg-black/60 blur-md rounded-full"></div>
+          <svg viewBox="0 0 120 160" class="product-img w-36 relative z-10">
+            <defs>
+              <linearGradient id="body15" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#7a0d10"/>
+                <stop offset="20%" stop-color="#c01419"/>
+                <stop offset="50%" stop-color="#E71D24"/>
+                <stop offset="80%" stop-color="#a01015"/>
+                <stop offset="100%" stop-color="#5a0a0c"/>
+              </linearGradient>
+              <linearGradient id="shine15" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+              </linearGradient>
+              <linearGradient id="valve15" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2a2a2a"/>
+                <stop offset="50%" stop-color="#6a6a6a"/>
+                <stop offset="100%" stop-color="#1a1a1a"/>
+              </linearGradient>
+              <linearGradient id="ring15" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#444"/>
+                <stop offset="50%" stop-color="#888"/>
+                <stop offset="100%" stop-color="#333"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="60" cy="150" rx="38" ry="3" fill="#000" opacity="0.5"/>
+            <rect x="20" y="138" width="80" height="10" rx="2" fill="url(#ring15)"/>
+            <path d="M 22 36 Q 22 28 32 28 L 88 28 Q 98 28 98 36 L 98 138 L 22 138 Z" fill="url(#body15)"/>
+            <path d="M 32 36 Q 32 30 38 30 L 46 30 L 46 138 L 32 138 Z" fill="url(#shine15)" opacity="0.7"/>
+            <rect x="32" y="68" width="56" height="32" rx="2" fill="#fff"/>
+            <rect x="32" y="68" width="56" height="3" fill="#E71D24"/>
+            <rect x="32" y="97" width="56" height="3" fill="#E71D24"/>
+            <text x="60" y="91" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="15" fill="#0a0a0a">15 KG</text>
+            <rect x="30" y="18" width="60" height="12" rx="3" fill="url(#ring15)"/>
+            <path d="M 28 20 L 16 20 Q 12 20 12 24 L 12 28 Q 12 32 16 32 L 28 32" stroke="#3a3a3a" stroke-width="3" fill="none"/>
+            <path d="M 92 20 L 104 20 Q 108 20 108 24 L 108 28 Q 108 32 104 32 L 92 32" stroke="#3a3a3a" stroke-width="3" fill="none"/>
+            <rect x="52" y="4" width="16" height="18" rx="2" fill="url(#valve15)"/>
+            <circle cx="60" cy="4" r="6" fill="#2a2a2a"/>
+            <circle cx="60" cy="4" r="4" fill="#5a5a5a"/>
+          </svg>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display font-semibold text-xl text-white">Garrafa 15kg</h3>
+          <p class="body-tight text-sm text-neutral-400 mt-2 font-light flex-1">
+            Para familias y hogares con mayor consumo. Mayor rendimiento y menos recambio.
+          </p>
+          <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir%20una%20Garrafa%20de%2015kg.%20Mi%20direcci%C3%B3n%20es%3A%20"
+             target="_blank" rel="noopener"
+             class="btn-red mt-6 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-sm font-bold text-sm">
+            Pedir 15kg →
+          </a>
+        </div>
+      </article>
+
+      <!-- 45 KG -->
+      <article class="product-card group rounded-sm border border-neutral-800 bg-neutral-950 overflow-hidden flex flex-col">
+        <!--
+          === REEMPLAZAR POR FOTO REAL ===
+          <img src="assets/productos/cilindro-45kg.jpg" alt="Cilindro 45kg" class="product-img w-40 object-contain" />
+        -->
+        <div class="relative aspect-square bg-gradient-to-b from-neutral-900 to-black overflow-hidden flex items-center justify-center">
+          <span class="absolute top-4 left-4 tag tag-light z-10">Industria</span>
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-44 h-3 bg-black/60 blur-md rounded-full"></div>
+          <svg viewBox="0 0 130 170" class="product-img w-40 relative z-10">
+            <defs>
+              <linearGradient id="body45" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#7a0d10"/>
+                <stop offset="20%" stop-color="#c01419"/>
+                <stop offset="50%" stop-color="#E71D24"/>
+                <stop offset="80%" stop-color="#a01015"/>
+                <stop offset="100%" stop-color="#5a0a0c"/>
+              </linearGradient>
+              <linearGradient id="shine45" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                <stop offset="100%" stop-color="rgba(0,0,0,0.4)"/>
+              </linearGradient>
+              <linearGradient id="cap45" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#3a3a3a"/>
+                <stop offset="50%" stop-color="#7a7a7a"/>
+                <stop offset="100%" stop-color="#2a2a2a"/>
+              </linearGradient>
+              <linearGradient id="ring45" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#444"/>
+                <stop offset="50%" stop-color="#888"/>
+                <stop offset="100%" stop-color="#333"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="65" cy="160" rx="46" ry="3" fill="#000" opacity="0.5"/>
+            <!-- Base -->
+            <rect x="14" y="146" width="102" height="12" rx="2" fill="url(#ring45)"/>
+            <!-- Cuerpo cilíndrico -->
+            <path d="M 18 30 L 18 146 L 112 146 L 112 30 Q 112 22 100 22 L 30 22 Q 18 22 18 30 Z" fill="url(#body45)"/>
+            <!-- Brillo lateral -->
+            <path d="M 28 28 L 28 146 L 38 146 L 38 28 Z" fill="url(#shine45)" opacity="0.7"/>
+            <!-- Etiqueta blanca -->
+            <rect x="28" y="78" width="74" height="36" rx="2" fill="#fff"/>
+            <rect x="28" y="78" width="74" height="4" fill="#E71D24"/>
+            <rect x="28" y="110" width="74" height="4" fill="#E71D24"/>
+            <text x="65" y="103" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#0a0a0a">45 KG</text>
+            <!-- Cuello superior -->
+            <rect x="50" y="14" width="30" height="10" rx="2" fill="url(#ring45)"/>
+            <!-- Capucha protectora (típica en industriales) -->
+            <path d="M 42 14 Q 42 6 52 6 L 78 6 Q 88 6 88 14 L 88 18 L 42 18 Z" fill="url(#cap45)"/>
+            <!-- Manija superior -->
+            <path d="M 50 6 Q 50 -2 60 -2 L 70 -2 Q 80 -2 80 6" stroke="#3a3a3a" stroke-width="3" fill="none"/>
+          </svg>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display font-semibold text-xl text-white">Cilindro 45kg</h3>
+          <p class="body-tight text-sm text-neutral-400 mt-2 font-light flex-1">
+            Para comercios, restaurantes, panaderías e industria. Mayor autonomía, menor costo por kilo.
+          </p>
+          <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir%20un%20Cilindro%20de%2045kg.%20Mi%20direcci%C3%B3n%20es%3A%20"
+             target="_blank" rel="noopener"
+             class="btn-red mt-6 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-sm font-bold text-sm">
+            Pedir 45kg →
+          </a>
+        </div>
+      </article>
+
+      <!-- BIDÓN 20L -->
+      <article class="product-card group rounded-sm border border-neutral-800 bg-neutral-950 overflow-hidden flex flex-col">
+        <!--
+          === REEMPLAZAR POR FOTO REAL ===
+          <img src="assets/productos/bidon-20l.jpg" alt="Bidón de agua 20L" class="product-img w-32 object-contain" />
+        -->
+        <div class="relative aspect-square bg-gradient-to-b from-neutral-900 to-black overflow-hidden flex items-center justify-center">
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-3 bg-black/60 blur-md rounded-full"></div>
+          <svg viewBox="0 0 120 160" class="product-img w-32 relative z-10">
+            <defs>
+              <!-- Agua azulada con transparencia -->
+              <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#a8c8d8" stop-opacity="0.8"/>
+                <stop offset="50%" stop-color="#d4e4ea" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#7a9aa8" stop-opacity="0.7"/>
+              </linearGradient>
+              <linearGradient id="bottleShine" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+              <linearGradient id="capWater" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0a0a0a"/>
+                <stop offset="50%" stop-color="#2a2a2a"/>
+                <stop offset="100%" stop-color="#0a0a0a"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="60" cy="148" rx="34" ry="3" fill="#000" opacity="0.5"/>
+            <!-- Cuerpo del bidón (forma con cuello) -->
+            <path d="M 24 50 Q 24 42 32 42 L 88 42 Q 96 42 96 50 L 96 138 Q 96 144 90 144 L 30 144 Q 24 144 24 138 Z" fill="url(#water)"/>
+            <!-- Brillo izquierdo (forma vertical) -->
+            <path d="M 32 52 Q 32 46 36 46 L 42 46 L 42 138 L 32 138 Z" fill="url(#bottleShine)" opacity="0.8"/>
+            <!-- Brillo derecho pequeño -->
+            <rect x="84" y="60" width="4" height="60" rx="2" fill="rgba(255,255,255,0.4)"/>
+            <!-- Cuello -->
+            <rect x="46" y="22" width="28" height="22" rx="2" fill="url(#water)" opacity="0.95"/>
+            <!-- Línea del cuello -->
+            <rect x="46" y="38" width="28" height="2" fill="rgba(0,0,0,0.15)"/>
+            <!-- Tapón -->
+            <rect x="44" y="14" width="32" height="12" rx="3" fill="url(#capWater)"/>
+            <!-- Etiqueta -->
+            <rect x="32" y="84" width="56" height="32" rx="2" fill="#E71D24"/>
+            <rect x="32" y="84" width="56" height="3" fill="#fff"/>
+            <rect x="32" y="113" width="56" height="3" fill="#fff"/>
+            <text x="60" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-weight="900" font-size="14" fill="#fff">AGUA</text>
+            <text x="60" y="111" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="8" fill="#fff" letter-spacing="2">20 LITROS</text>
+          </svg>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display font-semibold text-xl text-white">Bidón 20L de agua</h3>
+          <p class="body-tight text-sm text-neutral-400 mt-2 font-light flex-1">
+            Agua para tu casa, oficina o comercio. Reposición programada disponible.
+          </p>
+          <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir%20un%20Bid%C3%B3n%20de%20agua%20de%2020L.%20Mi%20direcci%C3%B3n%20es%3A%20"
+             target="_blank" rel="noopener"
+             class="btn-red mt-6 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-sm font-bold text-sm">
+            Pedir bidón →
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BANNER ESTUDIANTES -->
+    <div class="mt-12 rounded-sm border border-neutral-800 bg-neutral-950 p-6 sm:p-7 flex items-start gap-5">
+      <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+        <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+      </div>
+      <div class="flex-1">
+        <div class="display font-semibold text-lg text-white">Descuento estudiantes</div>
+        <p class="body-tight text-sm text-neutral-400 mt-1 font-light">Mostrá tu credencial al recibir el pedido y aplicamos el descuento.</p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20soy%20estudiante%20y%20quiero%20info%20del%20descuento" target="_blank" rel="noopener"
+           class="text-sm text-rapi-red hover:text-rapi-redLight font-semibold mt-3 inline-flex items-center gap-1.5 transition">
+          Pedir con descuento →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ INDUSTRIA / PROPUESTA COMERCIAL ============ -->
+<section id="industria" class="relative py-24 sm:py-32 lg:py-40 border-t border-neutral-900 bg-gradient-to-b from-[#0a0a0a] via-[#100808] to-[#0a0a0a]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- ENCABEZADO -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Comercios e industria</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          ¿Querés trabajar<br/>
+          <span class="accent-red">con nosotros?</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          Si <span class="text-white font-normal">tu negocio consume gas todos los días</span> o querés
+          <span class="text-white font-normal">revender nuestros productos</span> en tu zona,
+          tenemos una propuesta para vos. Hablemos.
+        </p>
+      </div>
+    </div>
+
+    <!-- TRES PROPUESTAS -->
+    <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
+
+      <!-- Reventa -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">01 — Reventa</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">¿Querés revender en tu barrio?</h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Si tenés un kiosco, almacén, ferretería o local de barrio, podés sumar gas a tu oferta.
+          Te abastecemos de garrafas con condiciones especiales para reventa.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20me%20interesa%20la%20propuesta%20para%20revender%20sus%20productos.%20Tengo%20un%20%5Bkiosco%2Falmac%C3%A9n%2Fferreter%C3%ADa%5D%20en%20%5Bbarrio%5D"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Quiero revender
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Industria diaria -->
+      <article class="rounded-sm border border-rapi-red/40 bg-gradient-to-br from-rapi-red/10 to-transparent p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V11l5-3v3l5-3v3l4-2v15"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">02 — Consumo diario</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">Tu negocio necesita gas todos los días.</h3>
+        <p class="body-tight text-sm text-neutral-300 leading-relaxed font-light flex-1">
+          Restaurantes, panaderías, rotiserías, hoteles, fábricas. Te garantizamos
+          stock, reposición programada y prioridad en la entrega para que tu cocina
+          o tu producción no se detenga nunca.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20mi%20negocio%20consume%20gas%20diariamente.%20Quiero%20una%20propuesta.%20Mi%20rubro%20es%3A%20"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-rapi-red hover:text-rapi-redLight font-semibold transition group">
+          Quiero la propuesta
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Industria mediana -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 18h18M5 18V8l5 4V8l5 4V8l4 2v8"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">03 — Cilindros 45kg</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">Para industria y comercios grandes.</h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Mayor autonomía, menor recambio, mejor costo por kilo.
+          Cotizamos según volumen y frecuencia que necesite tu operación.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20necesito%20cilindros%20de%2045kg%20para%20mi%20industria%2Fcomercio.%20Quiero%20una%20cotizaci%C3%B3n"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Pedir cotización
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- BENEFICIOS DE TRABAJAR CON NOSOTROS -->
+    <div class="mt-16 lg:mt-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div>
+        <div class="eyebrow mb-5">Por qué elegirnos</div>
+        <h3 class="display text-3xl sm:text-4xl font-medium text-white">
+          No te vendemos.<br/>
+          <span class="accent-red">Trabajamos con vos.</span>
+        </h3>
+        <p class="mt-6 body-tight text-base text-neutral-300 leading-relaxed font-light">
+          Cuando un negocio elige Rapigas como proveedor, no es un cliente más.
+          Adaptamos la entrega a tus tiempos, te avisamos antes de que te quedes sin stock,
+          y resolvemos cualquier inconveniente de manera directa, sin call centers.
+        </p>
+      </div>
+
+      <ul class="space-y-5">
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">01</div>
+          <div>
+            <div class="text-white font-medium text-base">Reposición programada</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Te entregamos antes de que se te termine. Vos cocinás, nosotros calculamos.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">02</div>
+          <div>
+            <div class="text-white font-medium text-base">Prioridad de entrega</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Los negocios asociados van primero en la ruta de reparto.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">03</div>
+          <div>
+            <div class="text-white font-medium text-base">Trato directo</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Hablás con quien resuelve. Sin intermediarios, sin esperas.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">04</div>
+          <div>
+            <div class="text-white font-medium text-base">Comprobante de pago</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Somos monotributistas. Entregamos comprobante por cada operación.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- CTA FINAL INDUSTRIA -->
+    <div class="mt-20 lg:mt-24 rounded-sm border border-rapi-red/30 bg-gradient-to-r from-rapi-red/10 via-transparent to-transparent p-8 sm:p-10 lg:p-12">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div class="flex-1">
+          <div class="eyebrow mb-3">Hablemos</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white max-w-2xl">
+            Contanos qué necesita tu negocio y armamos una propuesta para vos.
+          </h3>
+        </div>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20conversar%20una%20propuesta%20comercial%20para%20mi%20negocio"
+           target="_blank" rel="noopener"
+           class="btn-whats inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-sm font-black text-base whitespace-nowrap">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- ============ PEDIDO RÁPIDO ============ -->
+<section id="pedido" class="relative py-24 sm:py-32 lg:py-40">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <!-- TEXTO IZQUIERDA -->
+      <div class="lg:col-span-5">
+        <div class="reveal eyebrow mb-6">Pedido rápido</div>
+        <h2 class="reveal reveal-d1 display font-medium text-4xl sm:text-5xl lg:text-6xl text-white">
+          Tu pedido<br/>
+          en <span class="accent-red">30 segundos.</span>
+        </h2>
+
+        <p class="reveal reveal-d2 mt-7 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light">
+          Completá tres datos y enviamos tu pedido directo a nuestro WhatsApp. Sin registros, sin formularios largos, sin vueltas.
+        </p>
+
+        <ul class="reveal reveal-d3 mt-10 space-y-5">
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-sm bg-rapi-red/15 text-rapi-red flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-medium text-sm">Sin registro previo</div>
+              <div class="body-tight text-sm text-neutral-400 mt-0.5 font-light">No te pedimos crear ninguna cuenta.</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-sm bg-rapi-red/15 text-rapi-red flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-medium text-sm">Confirmamos por WhatsApp</div>
+              <div class="body-tight text-sm text-neutral-400 mt-0.5 font-light">Te avisamos precio y horario aproximado.</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-sm bg-rapi-red/15 text-rapi-red flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-medium text-sm">Pago al recibir</div>
+              <div class="body-tight text-sm text-neutral-400 mt-0.5 font-light">Efectivo o transferencia en el momento.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- FORMULARIO DERECHA -->
+      <div class="lg:col-span-7">
+        <div class="reveal reveal-d2 rounded-sm border border-neutral-800 bg-neutral-950 p-6 sm:p-8 lg:p-10">
+
+          <form id="pedidoForm" class="space-y-6">
+
+            <!-- Producto -->
+            <div>
+              <label for="producto" class="block text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-3">Producto</label>
+              <select id="producto" required
+                class="field w-full rounded-sm px-4 py-3.5 text-base appearance-none cursor-pointer">
+                <option value="">Elegí un producto…</option>
+                <option value="Garrafa 10kg">Garrafa 10kg</option>
+                <option value="Garrafa 15kg">Garrafa 15kg</option>
+                <option value="Cilindro 45kg">Cilindro 45kg (industria)</option>
+                <option value="Bidón de agua 20L">Bidón de agua 20L</option>
+              </select>
+            </div>
+
+            <!-- Cantidad + Tipo de cliente -->
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="cantidad" class="block text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-3">Cantidad</label>
+                <input id="cantidad" type="number" min="1" value="1" required
+                  class="field w-full rounded-sm px-4 py-3.5 text-base" />
+              </div>
+              <div>
+                <label for="urgencia" class="block text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-3">¿Es urgente?</label>
+                <select id="urgencia"
+                  class="field w-full rounded-sm px-4 py-3.5 text-base appearance-none cursor-pointer">
+                  <option value="">Lo antes posible</option>
+                  <option value="Urgente — necesito YA">Urgente — necesito ya</option>
+                  <option value="No es urgente, puede ser mañana">No es urgente, puede ser mañana</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Dirección -->
+            <div>
+              <label for="direccion" class="block text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-3">Dirección de entrega</label>
+              <input id="direccion" type="text" required placeholder="Calle, número y barrio (La Rioja capital)"
+                class="field w-full rounded-sm px-4 py-3.5 text-base" />
+            </div>
+
+            <!-- Estudiante checkbox -->
+            <label for="estudiante" class="flex items-center gap-3 p-4 rounded-sm border border-neutral-800 bg-neutral-900/60 cursor-pointer hover:border-rapi-red/40 transition">
+              <input type="checkbox" id="estudiante" class="rapi-check w-5 h-5" />
+              <div class="flex-1">
+                <div class="text-sm text-white font-medium">Soy estudiante</div>
+                <div class="text-xs text-neutral-400 mt-0.5 font-light">Aplicamos el descuento al recibir (con credencial).</div>
+              </div>
+            </label>
+
+            <!-- CTA -->
+            <button type="submit"
+              class="btn-whats w-full inline-flex items-center justify-center gap-2.5 py-4 rounded-sm font-black text-base">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+              Enviar pedido por WhatsApp
+            </button>
+
+            <p class="text-xs text-neutral-500 text-center font-light">
+              Al enviar se abre WhatsApp con tu pedido cargado, listo para confirmar.
+            </p>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('pedidoForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const producto   = document.getElementById('producto').value;
+    const cantidad   = document.getElementById('cantidad').value;
+    const direccion  = document.getElementById('direccion').value;
+    const urgencia   = document.getElementById('urgencia').value;
+    const estudiante = document.getElementById('estudiante').checked;
+
+    let mensaje =
+      `Hola Rapigas! Quiero hacer un pedido:\n\n` +
+      `🔹 Producto: ${producto}\n` +
+      `🔹 Cantidad: ${cantidad}\n` +
+      `🔹 Dirección: ${direccion}\n`;
+
+    if (urgencia)   mensaje += `🔹 Urgencia: ${urgencia}\n`;
+    if (estudiante) mensaje += `🔹 Soy estudiante (descuento)\n`;
+
+    mensaje += `\n¡Gracias!`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+<!-- =================================================================== -->
+<!-- ============== AGUA + CÓMO FUNCIONA + TESTIMONIOS + ============== -->
+<!-- ============== SEGURIDAD + CONTACTO + FOOTER ====================== -->
+<!-- =================================================================== -->
+<!-- ============ AGUA ============ -->
+<section id="agua" class="relative py-24 sm:py-32 lg:py-40 border-t border-neutral-900 bg-gradient-to-b from-[#0a0a0a] via-[#0a0d12] to-[#0a0a0a]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Agua de mesa · Calidad certificada</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Agua de mesa,<br/>
+          <span class="accent-red">de la más alta calidad.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          <span class="text-white font-normal">Agua de mesa controlada por Bromatología</span>,
+          envasada con los más altos estándares de calidad. Servicio completo
+          con bidones, alquiler de dispensers para hogar, comercio, industria y eventos.
+        </p>
+      </div>
+    </div>
+
+    <!-- BANNER CALIDAD CERTIFICADA -->
+    <div class="mb-12 lg:mb-16 grid sm:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800 rounded-sm overflow-hidden">
+
+      <div class="bg-neutral-950 p-6 flex items-center gap-4">
+        <div class="w-11 h-11 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold">Calidad</div>
+          <div class="text-sm text-white font-medium mt-0.5">Agua de mesa premium</div>
+        </div>
+      </div>
+
+      <div class="bg-neutral-950 p-6 flex items-center gap-4">
+        <div class="w-11 h-11 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/></svg>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold">Control</div>
+          <div class="text-sm text-white font-medium mt-0.5">Certificada por Bromatología</div>
+        </div>
+      </div>
+
+      <div class="bg-neutral-950 p-6 flex items-center gap-4">
+        <div class="w-11 h-11 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 0c-2 0-4 2-4 4 0 3 4 8 4 8s4-5 4-8c0-2-2-4-4-4z"/></svg>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold">Origen</div>
+          <div class="text-sm text-white font-medium mt-0.5">Envasada bajo estándares estrictos</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5 SERVICIOS DE AGUA -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-16">
+
+      <!-- Servicio 1: Bidones -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 2h8M9 2v4M15 2v4M7 6h10v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/><path d="M10 12c0-1 1-2 2-2s2 1 2 2-2 3-2 3-2-2-2-3z"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">01 — Bidones</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Bidones de 20 litros.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Agua de mesa de máxima calidad, certificada por Bromatología.
+          Te llevamos el bidón nuevo y retiramos el vacío. Sin esfuerzo, sin cargar nada.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20pedir%20un%20Bid%C3%B3n%20de%20agua%20de%2020L.%20Mi%20direcci%C3%B3n%20es%3A%20"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Pedir bidón
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Servicio 2: Alquiler dispenser (destacado) -->
+      <article class="rounded-sm border border-rapi-red/40 bg-gradient-to-br from-rapi-red/10 to-transparent p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 2h8v6H8z"/><path d="M6 8h12v14H6z"/><circle cx="10" cy="14" r="1.5"/><circle cx="14" cy="14" r="1.5"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">02 — Dispenser hogar/oficina</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Alquiler frío y calor.
+        </h3>
+        <p class="body-tight text-sm text-neutral-300 leading-relaxed font-light flex-1">
+          Alquilá un dispenser frío/calor con cuota mensual fija. Lo instalamos,
+          lo mantenemos y te repartimos los bidones. Vos solo te servís el agua.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20me%20interesa%20alquilar%20un%20dispenser%20fr%C3%ADo%2Fcalor.%20Es%20para%20%5Bcasa%2Foficina%2Fcomercio%5D"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-rapi-red hover:text-rapi-redLight font-semibold transition group">
+          Quiero el dispenser
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Servicio 3: Eventos (NUEVO) -->
+      <article class="rounded-sm border border-rapi-red/40 bg-gradient-to-br from-rapi-red/10 to-transparent p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 2v4M16 2v4M3 10h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><circle cx="12" cy="15" r="2"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">03 — Eventos</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Dispenser para tu evento.
+        </h3>
+        <p class="body-tight text-sm text-neutral-300 leading-relaxed font-light flex-1">
+          ¿Casamiento, cumpleaños, congreso, fiesta de fin de año? Te alquilamos
+          dispensers frío/calor por el día, fin de semana o lo que necesites.
+          Con bidones incluidos.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20necesito%20alquilar%20un%20dispenser%20para%20un%20evento.%20Fecha%3A%20%5B__%5D%20Lugar%3A%20%5B__%5D"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-rapi-red hover:text-rapi-redLight font-semibold transition group">
+          Cotizar mi evento
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Servicio 4: Comercios -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l2-5h14l2 5M3 9v11h18V9M3 9h18M9 14h6"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">04 — Comercios</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Para tu local u oficina.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Atención a oficinas, consultorios, peluquerías, talleres y locales.
+          Reposición programada para que nunca te quedes sin agua para tu personal o clientes.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20necesito%20agua%20para%20mi%20comercio%2Foficina.%20Mi%20rubro%20es%3A%20"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Servicio comercial
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Servicio 5: Industria -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V11l5-3v3l5-3v3l4-2v15"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">05 — Industria</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Volúmenes para industria.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Para fábricas, depósitos y obradores. Cantidades grandes, entregas
+          programadas y atención dedicada para que nunca le falte agua a tu equipo.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20necesito%20agua%20para%20mi%20industria%2Fobrador.%20Quiero%20una%20cotizaci%C3%B3n%20por%20vol%C3%BAmen"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Pedir cotización
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+      <!-- Servicio 6: Atención personalizada (cierra la grilla en 6 = 3 columnas perfectas) -->
+      <article class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">06 — Atención</div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Te atendemos por nombre.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Sabemos cuándo te toca el recambio. Si necesitás algo distinto, lo charlamos
+          y lo resolvemos. Reparto en moto para urgencias, camioneta para volúmenes.
+        </p>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20info%20del%20servicio%20de%20agua"
+           target="_blank" rel="noopener"
+           class="mt-6 inline-flex items-center gap-2 text-sm text-white hover:text-rapi-red font-semibold transition group">
+          Hablar con nosotros
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- COMPARATIVA: ¿POR QUÉ ALQUILAR DISPENSER? -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-16">
+      <div class="lg:col-span-5">
+        <div class="eyebrow mb-5">Conviene</div>
+        <h3 class="display text-3xl sm:text-4xl font-medium text-white">
+          Olvidate de cargar bidones.<br/>
+          <span class="accent-red">Alquilá un dispenser.</span>
+        </h3>
+        <p class="mt-6 body-tight text-base text-neutral-300 leading-relaxed font-light">
+          Por una cuota mensual fija tenés agua fría y caliente todo el día,
+          con bidones que te llevamos sin que tengas que pedirlos. Es la opción
+          más cómoda y barata a largo plazo, especialmente para oficinas y comercios.
+        </p>
+      </div>
+
+      <ul class="lg:col-span-7 space-y-5">
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">01</div>
+          <div>
+            <div class="text-white font-medium text-base">Cuota mensual fija</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Sabés exactamente cuánto vas a pagar todos los meses.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">02</div>
+          <div>
+            <div class="text-white font-medium text-base">Instalación y mantenimiento incluidos</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Lo llevamos, lo conectamos y lo mantenemos sin costo extra.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4 pb-5 border-b border-neutral-800">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">03</div>
+          <div>
+            <div class="text-white font-medium text-base">Reposición programada</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Te llevamos los bidones antes de que se te terminen.</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <div class="text-2xl font-medium accent-red display w-12 flex-shrink-0">04</div>
+          <div>
+            <div class="text-white font-medium text-base">Si algo falla, lo cambiamos</div>
+            <div class="body-tight text-sm text-neutral-400 mt-1 font-light">Si el equipo tiene un problema, te traemos otro al toque.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- CTA AGUA -->
+    <div class="rounded-sm border border-rapi-red/30 bg-gradient-to-r from-rapi-red/10 via-transparent to-transparent p-8 sm:p-10 lg:p-12">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div class="flex-1">
+          <div class="eyebrow mb-3">Pedinos</div>
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white max-w-2xl">
+            Contanos qué necesitás y te armamos el servicio de agua a tu medida.
+          </h3>
+        </div>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20info%20del%20servicio%20de%20agua%20%28bidones%2Fdispenser%29"
+           target="_blank" rel="noopener"
+           class="btn-whats inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-sm font-black text-base whitespace-nowrap">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section id="como-funciona" class="relative py-24 sm:py-32 lg:py-40 border-t border-neutral-900">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Cómo funciona</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Tres pasos.<br/>
+          <span class="accent-red">Cero complicaciones.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          No hay aplicaciones que descargar, ni cuentas que crear, ni vueltas innecesarias.
+          <span class="text-white font-normal">Pedís, confirmamos, entregamos.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 PASOS -->
+    <div class="grid md:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800 rounded-sm overflow-hidden">
+
+      <div class="bg-neutral-950 p-8 lg:p-10">
+        <div class="display text-5xl font-medium accent-red mb-6">01</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">Pedís</h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light">
+          Por WhatsApp, desde el formulario de la web, o pasando por nuestro local
+          en Av. Santa Rosa 9003. Te respondemos enseguida.
+        </p>
+      </div>
+
+      <div class="bg-neutral-950 p-8 lg:p-10">
+        <div class="display text-5xl font-medium accent-red mb-6">02</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">Confirmamos</h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light">
+          Te pasamos el precio y el horario aproximado de entrega.
+          Si es urgente, salimos en moto. Si tu pedido es grande, en camioneta.
+        </p>
+      </div>
+
+      <div class="bg-neutral-950 p-8 lg:p-10">
+        <div class="display text-5xl font-medium accent-red mb-6">03</div>
+        <h3 class="display font-semibold text-xl text-white mb-3">Entregamos</h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light">
+          Llegamos a tu puerta. Pagás al recibir, en efectivo o por transferencia.
+          Te entregamos el comprobante.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section id="testimonios" class="relative py-24 sm:py-32 lg:py-40">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Testimonios</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Más de 25.000 pedidos.<br/>
+          <span class="accent-red">Esto dicen.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          La mejor publicidad la hacen nuestros clientes.
+          <span class="text-white font-normal">Estas son algunas de sus palabras.</span>
+        </p>
+      </div>
+    </div>
+
+    <!--
+      ===== TESTIMONIOS REALES =====
+      Para reemplazar por reseñas reales:
+      - Sacá capturas de tus reseñas de Google Maps, Facebook, Instagram o WhatsApp.
+      - Subilas a /assets/testimonios/cliente-1.jpg, cliente-2.jpg, etc.
+      - Reemplazá el bloque <blockquote> por el texto real (sin tocar nada más).
+      - Mantené el nombre y la zona/barrio o rubro para que se vea creíble.
+      - Lo ideal: pedile permiso al cliente y que te firme con nombre y barrio o local.
+    -->
+
+    <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
+
+      <!-- Testimonio 1 -->
+      <figure class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <span class="quote-mark">“</span>
+        <blockquote class="body-tight text-base text-neutral-200 leading-relaxed font-light flex-1">
+          Les pedí una garrafa un domingo a las 9 de la noche pensando que no me iban a contestar.
+          A los 20 minutos estaba en mi casa. Servicio impecable, se nota que les importa el cliente.
+        </blockquote>
+        <figcaption class="mt-7 pt-6 border-t border-neutral-800 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-rapi-red/15 flex items-center justify-center font-bold text-rapi-red text-sm">M</div>
+          <div>
+            <div class="text-sm text-white font-medium">María L.</div>
+            <div class="text-xs text-neutral-500 mt-0.5">Barrio Centro</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonio 2 — destacado -->
+      <figure class="rounded-sm border border-rapi-red/40 bg-gradient-to-br from-rapi-red/10 to-transparent p-7 flex flex-col">
+        <span class="quote-mark">“</span>
+        <blockquote class="body-tight text-base text-neutral-100 leading-relaxed font-light flex-1">
+          Tengo una rotisería y no puedo darme el lujo de quedarme sin gas en pleno servicio.
+          Hace casi tres años que trabajo con Rapigas y nunca me fallaron. Te avisan ellos cuando
+          se está por terminar. Es como tener un socio.
+        </blockquote>
+        <figcaption class="mt-7 pt-6 border-t border-neutral-800 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-rapi-red flex items-center justify-center font-bold text-white text-sm">J</div>
+          <div>
+            <div class="text-sm text-white font-medium">Javier P.</div>
+            <div class="text-xs text-neutral-500 mt-0.5">Rotisería · Cliente desde 2022</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonio 3 -->
+      <figure class="rounded-sm border border-neutral-800 bg-neutral-950 p-7 flex flex-col">
+        <span class="quote-mark">“</span>
+        <blockquote class="body-tight text-base text-neutral-200 leading-relaxed font-light flex-1">
+          Soy estudiante y vivo cerca de la UNLaR. Siempre les pido por WhatsApp y me hacen el
+          descuento sin drama. Atención re piola y el bidón de agua siempre llega el mismo día.
+        </blockquote>
+        <figcaption class="mt-7 pt-6 border-t border-neutral-800 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-rapi-red/15 flex items-center justify-center font-bold text-rapi-red text-sm">S</div>
+          <div>
+            <div class="text-sm text-white font-medium">Sofía R.</div>
+            <div class="text-xs text-neutral-500 mt-0.5">Estudiante UNLaR</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Strip de prueba social adicional -->
+    <div class="mt-12 lg:mt-16 grid sm:grid-cols-3 gap-4 lg:gap-6 pt-12 border-t border-neutral-900">
+      <div>
+        <div class="display text-3xl lg:text-4xl font-medium accent-red">+25.000</div>
+        <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Pedidos entregados</div>
+      </div>
+      <div>
+        <div class="display text-3xl lg:text-4xl font-medium text-white">+7</div>
+        <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">Años trabajando en La Rioja</div>
+      </div>
+      <div>
+        <div class="display text-3xl lg:text-4xl font-medium text-white">Lun-Sáb</div>
+        <div class="mt-2 text-xs uppercase tracking-wider text-neutral-500">08:30 — 23:00 hs</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- ============ SEGURIDAD ============ -->
+<section id="seguridad" class="relative py-24 sm:py-32 lg:py-40">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Seguridad · Te cuidamos</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          El gas no se<br/>
+          <span class="accent-red">improvisa.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          No solo te entregamos gas. Queremos que lo uses bien y de manera segura.
+          <span class="text-white font-normal">Estos son los consejos básicos que damos a todos nuestros clientes.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- TIPS PRINCIPALES -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800 rounded-sm overflow-hidden mb-12">
+
+      <!-- Tip 1: Puntera del regulador -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">01 — Regulador</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Cambiá la puntera cada 3 meses.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          La puntera (o gomita) del regulador se desgasta con el uso. Reemplazala
+          cada 3 meses o cada 3 cambios de garrafa. Es barata, dura poco y previene
+          fugas. La conseguís en cualquier ferretería.
+        </p>
+      </article>
+
+      <!-- Tip 2: Test de fuga -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">02 — Detectar fugas</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Probá con esponja y detergente.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Si sospechás de una fuga, pasá una esponja con agua y detergente sobre la
+          conexión y la válvula. Si se forman burbujas, hay pérdida. Cerrá la garrafa
+          de inmediato y llamanos. <strong class="text-white font-normal">Nunca uses un encendedor
+          o fósforo para detectar fugas.</strong>
+        </p>
+      </article>
+
+      <!-- Tip 3: Ventilación -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h6M2 8h10M2 16h8M14 12c1 0 2-1 2-2s-1-2-2-2M18 16c2 0 4-2 4-4s-2-4-4-4"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">03 — Ventilación</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          La cocina siempre ventilada.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Mientras cocinás, dejá una ventana o puerta apenas abierta para que circule el aire.
+          Una buena ventilación previene la acumulación de gas y mejora la combustión de la hornalla.
+        </p>
+      </article>
+
+      <!-- Tip 4: Llama azul -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 7 7 7 12a5 5 0 0 0 10 0c0-2-1-3-1-5s-2-4-4-5z"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">04 — Llama</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          La llama tiene que ser azul.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Si la llama de la hornalla es <strong class="text-white font-normal">amarilla, naranja
+          o tirando a roja</strong>, hay un problema: combustión incompleta. Llamá a un gasista
+          matriculado para que revise la cocina. No la uses hasta corregirlo.
+        </p>
+      </article>
+
+      <!-- Tip 5: Guardado -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12M9 21V13h6v8"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">05 — Guardado</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          Guardá la garrafa parada y al aire.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Mantené siempre la garrafa en posición vertical, en lugar ventilado y lejos del calor
+          o el sol directo. Nunca la guardes en sótanos, dentro de muebles cerrados o cerca
+          de tomas eléctricas.
+        </p>
+      </article>
+
+      <!-- Tip 6: Caducidad -->
+      <article class="bg-neutral-950 p-7 lg:p-8 flex flex-col">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold">06 — Vida útil</div>
+        </div>
+        <h3 class="display font-semibold text-lg text-white mb-3 leading-snug">
+          El regulador dura 10 años.
+        </h3>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light flex-1">
+          Los reguladores tienen una vida útil de aproximadamente 10 años. Si el tuyo es más viejo,
+          conviene reemplazarlo aunque parezca funcionar bien. La manguera también: revisala que
+          no tenga grietas, dureza ni cortes.
+        </p>
+      </article>
+
+    </div>
+
+    <!-- ALERTA EMERGENCIA -->
+    <div class="rounded-sm border border-rapi-red/40 bg-gradient-to-r from-rapi-red/10 via-rapi-red/5 to-transparent p-7 lg:p-9">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-7">
+        <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-sm bg-rapi-red flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 lg:w-7 lg:h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-[0.18em] text-rapi-red font-semibold mb-2">Si sentís olor a gas</div>
+          <h3 class="display text-xl lg:text-2xl font-medium text-white mb-3 leading-snug">
+            No prendas la luz, no uses fósforos, no enchufes nada.
+          </h3>
+          <p class="body-tight text-sm text-neutral-300 leading-relaxed font-light">
+            Cerrá la llave de paso, abrí puertas y ventanas para ventilar, salí del lugar
+            y llamá inmediatamente a Bomberos al <strong class="text-white font-normal">100</strong>.
+            Ante cualquier duda, llamanos también: te orientamos en el momento.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENSAJE FINAL -->
+    <div class="mt-16 lg:mt-20 max-w-3xl">
+      <p class="display text-xl sm:text-2xl font-light text-white leading-snug">
+        En Rapigas no solo nos importa entregarte el gas a tiempo.
+        <span class="accent-red">Nos importa que lo uses bien.</span>
+        Por vos, por tu familia y por tu negocio.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider max-w-7xl mx-auto"></div>
+
+<!-- ============ CONTACTO + LOCAL ============ -->
+<section id="contacto" class="relative py-24 sm:py-32 lg:py-40">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 lg:mb-20">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow mb-6">Contacto</div>
+        <h2 class="reveal reveal-d1 display font-medium text-5xl sm:text-6xl lg:text-7xl text-white">
+          Estamos<br/>
+          <span class="accent-red">a un mensaje.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pt-8">
+        <p class="reveal reveal-d2 body-tight text-base sm:text-lg text-neutral-300 leading-relaxed font-light lead-marker">
+          Pedinos por WhatsApp, llamanos por teléfono o pasá por nuestro local.
+          <span class="text-white font-normal">Como prefieras.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- GRID PRINCIPAL: LOCAL + CANALES -->
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+
+      <!-- LOCAL FÍSICO (destacado) -->
+      <div class="lg:col-span-7 rounded-sm border border-neutral-800 bg-neutral-950 overflow-hidden">
+
+        <!-- Mapa placeholder -->
+        <div class="map-frame relative aspect-[16/9] flex items-center justify-center border-b border-neutral-800">
+          <!--
+            === REEMPLAZAR POR MAPA REAL ===
+            Embed de Google Maps:
+            <iframe class="absolute inset-0 w-full h-full"
+              src="https://www.google.com/maps/embed?pb=..."
+              loading="lazy" allowfullscreen></iframe>
+
+            Para obtener el embed: Google Maps → buscá "Av. Santa Rosa 9003 La Rioja" →
+            Compartir → Insertar mapa → copiá el src del iframe.
+          -->
+          <div class="text-center px-6">
+            <div class="inline-flex w-14 h-14 rounded-full bg-rapi-red items-center justify-center mb-4 shadow-lg">
+              <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="text-white font-medium text-lg">Av. Santa Rosa 9003</div>
+            <div class="text-sm text-neutral-400 mt-1">Zona UNLaR · La Rioja capital</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Santa+Rosa+9003+La+Rioja"
+               target="_blank" rel="noopener"
+               class="mt-5 inline-flex items-center gap-2 text-sm text-rapi-red hover:text-rapi-redLight font-semibold transition">
+              Ver en Google Maps
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Datos del local -->
+        <div class="p-7 lg:p-9">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div>
+              <div class="eyebrow mb-3">Nuestro local</div>
+              <h3 class="display text-2xl font-medium text-white">Pasá a buscar tu pedido.</h3>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/30">
+              <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+              <span class="text-xs font-medium text-green-400">Abierto ahora</span>
+            </div>
+          </div>
+
+          <p class="body-tight text-sm text-neutral-300 leading-relaxed font-light mb-7">
+            También podés pasar directamente por el local. Tenemos stock disponible
+            de todos los productos y atención personalizada en el mostrador.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-x-6 gap-y-5 pt-6 border-t border-neutral-800">
+            <div>
+              <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-2">Dirección</div>
+              <div class="text-base text-white font-medium">Av. Santa Rosa 9003</div>
+              <div class="text-sm text-neutral-400 mt-1 font-light">Zona UNLaR · La Rioja capital</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-2">Horarios</div>
+              <div class="text-base text-white font-medium">Lunes a Sábados</div>
+              <div class="text-sm text-neutral-400 mt-1 font-light">08:30 a 23:00 hs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CANALES DE CONTACTO -->
+      <div class="lg:col-span-5 space-y-5">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20hacer%20una%20consulta"
+           target="_blank" rel="noopener"
+           class="group block rounded-sm border border-neutral-800 hover:border-rapi-red/50 bg-neutral-950 p-7 transition">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-sm bg-[#25D366]/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-1">WhatsApp</div>
+              <div class="display text-2xl font-medium text-white">3804 - 506011</div>
+              <div class="text-sm text-neutral-400 mt-1 font-light">Respuesta inmediata en horario de atención</div>
+            </div>
+            <svg class="w-5 h-5 text-neutral-600 group-hover:text-rapi-red group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+        <!-- Teléfono -->
+        <a href="tel:+5493804506011"
+           class="group block rounded-sm border border-neutral-800 hover:border-rapi-red/50 bg-neutral-950 p-7 transition">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-1">Teléfono</div>
+              <div class="display text-2xl font-medium text-white">3804 - 506011</div>
+              <div class="text-sm text-neutral-400 mt-1 font-light">Llamanos directamente al local</div>
+            </div>
+            <svg class="w-5 h-5 text-neutral-600 group-hover:text-rapi-red group-hover:translate-x-1 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+        </a>
+
+        <!-- Zona de cobertura -->
+        <div class="rounded-sm border border-neutral-800 bg-neutral-950 p-7">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-sm bg-rapi-red/15 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-rapi-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-9-9 19-2-8z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-1">Zona de reparto</div>
+              <div class="display text-xl font-medium text-white">Toda La Rioja capital</div>
+              <div class="text-sm text-neutral-400 mt-1 font-light">Y barrios cercanos. Consultanos por tu zona.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="mt-16 lg:mt-20 rounded-sm border border-rapi-red/30 bg-gradient-to-r from-rapi-red/10 via-transparent to-transparent p-8 sm:p-10 lg:p-12">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div class="flex-1">
+          <h3 class="display text-2xl sm:text-3xl font-medium text-white max-w-2xl">
+            ¿Listo para hacer tu pedido?
+          </h3>
+          <p class="mt-3 text-base text-neutral-300 font-light">
+            Escribinos por WhatsApp y recibilo hoy mismo.
+          </p>
+        </div>
+        <a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20hacer%20un%20pedido"
+           target="_blank" rel="noopener"
+           class="btn-whats inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-sm font-black text-base whitespace-nowrap">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-neutral-900 bg-black">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+
+    <!-- Top: logo + descripción + columnas -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 pb-12 border-b border-neutral-900">
+
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <img src="assets/logo.jpeg" alt="Rapigas La Rioja"
+               class="w-12 h-12 rounded-sm object-cover ring-1 ring-white/10" />
+          <div class="leading-tight">
+            <div class="font-black text-lg tracking-tight">RAPI<span class="accent-red">GAS</span></div>
+            <div class="text-[10px] uppercase tracking-[0.18em] text-neutral-500 -mt-0.5">La Rioja</div>
+          </div>
+        </div>
+        <p class="body-tight text-sm text-neutral-400 leading-relaxed font-light max-w-md">
+          Empresa familiar fundada por Luis Caliva en 2019. Distribución de gas y agua a domicilio
+          en La Rioja capital, con más de 25.000 pedidos entregados.
+        </p>
+
+        <!-- Estado abierto -->
+        <div class="mt-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/30">
+          <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+          <span class="text-xs font-medium text-green-400">Abierto · Lun a Sáb 08:30 a 23:00</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-4">Productos</div>
+        <ul class="space-y-3 text-sm text-neutral-300 font-light">
+          <li><a href="#productos" class="hover:text-white transition">Garrafa 10kg</a></li>
+          <li><a href="#productos" class="hover:text-white transition">Garrafa 15kg</a></li>
+          <li><a href="#productos" class="hover:text-white transition">Cilindro 45kg</a></li>
+          <li><a href="#agua" class="hover:text-white transition">Agua de mesa</a></li>
+          <li><a href="#agua" class="hover:text-white transition">Alquiler dispenser</a></li>
+          <li><a href="#agua" class="hover:text-white transition">Dispenser para eventos</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-4">Empresa</div>
+        <ul class="space-y-3 text-sm text-neutral-300 font-light">
+          <li><a href="#nosotros" class="hover:text-white transition">Nuestra historia</a></li>
+          <li><a href="#industria" class="hover:text-white transition">Para comercios</a></li>
+          <li><a href="#seguridad" class="hover:text-white transition">Tips de seguridad</a></li>
+          <li><a href="#testimonios" class="hover:text-white transition">Testimonios</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <div class="text-xs uppercase tracking-[0.18em] text-neutral-500 font-semibold mb-4">Contacto</div>
+        <ul class="space-y-3 text-sm text-neutral-300 font-light">
+          <li>
+            <a href="https://wa.me/5493804506011" target="_blank" rel="noopener"
+               class="hover:text-rapi-red transition inline-flex items-center gap-2">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+              WhatsApp 3804-506011
+            </a>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. Santa Rosa 9003<br/><span class="text-neutral-500">Zona UNLaR · La Rioja</span></span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Lun a Sáb<br/><span class="text-neutral-500">08:30 a 23:00 hs</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
+      <div>© <span id="year"></span> Rapigas La Rioja. Todos los derechos reservados.</div>
+      <div class="flex items-center gap-3">
+        <span>Hecho en La Rioja, Argentina</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOTÓN WHATSAPP FLOTANTE ============ -->
+<a href="https://wa.me/5493804506011?text=Hola%20Rapigas%2C%20quiero%20hacer%20un%20pedido"
+   target="_blank" rel="noopener"
+   aria-label="Pedir por WhatsApp"
+   class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 pl-4 pr-5 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1fbe5b] text-black font-black shadow-2xl transition">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.15 1.6 5.96L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.84h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2z"/></svg>
+  <span class="hidden sm:inline">Pedir ahora</span>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
